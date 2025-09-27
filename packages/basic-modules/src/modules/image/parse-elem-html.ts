@@ -15,17 +15,20 @@ function parseHtml(elem: DOMElement, _children: Descendant[], _editor: IDomEdito
 
   href = decodeURIComponent(href) // 兼容 V4
 
+  const width = $elem.attr('width') || ''
+  const height = $elem.attr('height') || ''
+
   return {
     type: 'image',
     src: $elem.attr('src') || '',
     alt: $elem.attr('alt') || '',
     href,
     style: {
-      width: getStyleValue($elem, 'width'),
-      height: getStyleValue($elem, 'height'),
+      width: getStyleValue($elem, 'width') || (width ? `${width}px` : ''),
+      height: getStyleValue($elem, 'height') || (height ? `${height}px` : ''),
     },
-    width: $elem.attr('width') || '',
-    height: $elem.attr('height') || '',
+    width,
+    height,
     children: [{ text: '' }], // void node 有一个空白 text
   }
 }
