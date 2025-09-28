@@ -31,7 +31,7 @@ class UploadVideoMenu implements IButtonMenu {
   }
 
   exec(editor: IDomEditor, _value: string | boolean) {
-    const { allowedFileTypes = [], customBrowseAndUpload } = this.getMenuConfig(editor)
+    const { allowedFileTypes = [], customBrowseAndUpload, maxNumberOfFiles = 1 } = this.getMenuConfig(editor)
 
     // 自定义选择图片，并上传，如图床
     if (customBrowseAndUpload) {
@@ -46,9 +46,11 @@ class UploadVideoMenu implements IButtonMenu {
       acceptAttr = `accept="${allowedFileTypes.join(', ')}"`
     }
 
+    const multipleAttr = maxNumberOfFiles > 1 ? 'multiple' : ''
+
     // 添加 file input（每次重新创建 input）
     const $body = $('body')
-    const $inputFile = $(`<input type="file" ${acceptAttr} multiple/>`)
+    const $inputFile = $(`<input type="file" ${acceptAttr} ${multipleAttr} />`)
 
     $inputFile.hide()
     $body.append($inputFile)
