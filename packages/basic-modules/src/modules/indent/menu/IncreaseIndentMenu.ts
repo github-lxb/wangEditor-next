@@ -46,11 +46,11 @@ class IncreaseIndentMenu extends BaseMenu {
     if (!lastTextNode || !lastTextNode.fontSize) { return this.DEFAULT_INDENT_VALUE }
 
     // 如果段落的第一个 Text 节点 设置了 fontSize 样式，indent 值需要根据 fontSize 进行计算
-    const fontSize = lastTextNode.fontSize
-    const value = parseInt(lastTextNode.fontSize, 10)
-    const unit = fontSize.replace(`${value}`, '')
+    // const fontSize = lastTextNode.fontSize
+    // const value = parseInt(lastTextNode.fontSize, 10)
+    // const unit = fontSize.replace(`${value}`, '')
 
-    return `${value * 2}${unit}`
+    return '2em'
   }
 
   exec(editor: IDomEditor, _value: string | boolean): void {
