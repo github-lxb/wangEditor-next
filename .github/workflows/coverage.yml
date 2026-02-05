@@ -17,13 +17,13 @@ jobs:
     steps:
       # 检出代码库
       - name: Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       # 设置 Node.js 版本
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: 18.x
           registry-url: https://registry.npmjs.com
@@ -36,7 +36,7 @@ jobs:
 
       # 加载依赖缓存
       - name: Load cached dependencies
-        uses: actions/cache@v4.2.4
+        uses: actions/cache@v5.0.1
         id: cache
         with:
           path: |
@@ -60,7 +60,7 @@ jobs:
 
       # 上传覆盖率报告到 Codecov
       - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v5.5.1
+        uses: codecov/codecov-action@v5.5.2
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
       - name: Upload test results to Codecov

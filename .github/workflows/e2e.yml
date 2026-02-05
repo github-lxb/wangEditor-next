@@ -31,11 +31,11 @@ jobs:
       image: cypress/browsers:latest
       options: --user 1001
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v6
 
       # 设置 Node.js 版本
       - name: Use Node.js 18
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
           node-version: '18'
 
@@ -47,7 +47,7 @@ jobs:
 
       # 加载依赖缓存
       - name: Load cached dependencies
-        uses: actions/cache@v4.2.4
+        uses: actions/cache@v5.0.1
         id: cache
         with:
           path: |

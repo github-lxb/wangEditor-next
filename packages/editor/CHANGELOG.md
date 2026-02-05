@@ -1,5 +1,33 @@
 # Change Log
 
+## 5.6.49
+
+### Patch Changes
+
+- dd1b701: fix(table-module): fix the borderWidth of table copied from Safari(#146)
+- Updated dependencies [dd1b701]
+- Updated dependencies [d2a3191]
+- Updated dependencies [abbac6e]
+  - @wangeditor-next/table-module@1.6.60
+  - @wangeditor-next/list-module@1.1.52
+
+## 5.6.48
+
+### Patch Changes
+
+- 6b823fa: fix(blockquote/plugin): 修复有文字 + /n + img 的情况下，会误删 img 的问题(#709)
+- Updated dependencies [6b823fa]
+  - @wangeditor-next/basic-modules@1.5.47
+  - @wangeditor-next/upload-image-module@1.1.50
+
+## 5.6.47
+
+### Patch Changes
+
+- 5aeb10f: feat(yjs): add yjs-for-vue(#165)
+- Updated dependencies [5aeb10f]
+  - @wangeditor-next/table-module@1.6.59
+
 ## 5.6.46
 
 ### Patch Changes
