@@ -115,7 +115,8 @@ function parseTableHtml(
   const tdList = $elem.find('tr')[0]?.children || []
   const colgroupElments: HTMLCollection = $elem.find('colgroup')[0]?.children || null
   // @ts-ignore
-  const colLength = children[children.length - 1].children.length
+  // const colLength = children[children.length - 1].children.length
+  const colLength = colgroupElments.length
 
   if (colgroupElments && colgroupElments.length === colLength) {
     tableELement.columnWidths = Array.from(colgroupElments).map((col: any) => {

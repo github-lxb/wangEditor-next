@@ -90,7 +90,7 @@ class TableFullWidth implements IButtonMenu {
 
       // 应用新的列宽和宽度设置
       const props: Partial<TableElement> = {
-        width: 'auto',
+        width: '100%',
         columnWidths: finalColumnWidths,
       }
 
@@ -107,7 +107,7 @@ class TableFullWidth implements IButtonMenu {
 
       // 应用新的列宽和宽度设置
       const props: Partial<TableElement> = {
-        width: 'auto',
+        width: '100%',
         columnWidths: finalColumnWidths,
       }
 
