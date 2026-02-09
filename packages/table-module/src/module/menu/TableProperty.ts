@@ -104,9 +104,6 @@ class TableProperty implements IButtonMenu {
             <span class="color-group-block"></span>
             <input name="borderColor" type="hidden">
           </span>
-          <input name="borderWidth" type="number" placeholder="${t(
-    'tableModule.modal.borderWidth',
-  )}">
         </span>
       </label>
       <div class="babel-container">

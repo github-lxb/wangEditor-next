@@ -5,13 +5,17 @@
 
 import { Element } from 'slate'
 
+import { getColumnWidthRatios } from './column-resize'
 import { TableCellElement, TableElement, TableRowElement } from './custom-types'
 
 function tableToHtml(elemNode: Element, childrenHtml: string): string {
   const { width = 'auto', columnWidths, height = 'auto' } = elemNode as TableElement
+  // 列宽之间比值
+  const columnWidthRatios = columnWidths ? getColumnWidthRatios(columnWidths) : []
+
   const cols = columnWidths
-    ?.map(colWidth => {
-      return `<col width=${colWidth}></col>`
+    ?.map((colWidth, index) => {
+      return `<col width=${width === '100%' && columnWidthRatios.length ? `${columnWidthRatios[index] * 100}%` : colWidth}></col>`
     })
     .join('')
 
